@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Spartan:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Josefin Sans", sans-serif;
+	padding: 3rem 1.7rem 0;
+	font-weight: 400;
+	font-size: 18px;
+	min-height: 100vh;
+	background-image: url(./images/bg-mobile-light.jpg);
+	background-repeat: no-repeat;
+	background-position: top 0 center;
+	background-size: 100vw 200px, cover;
+	background-color: var(--Very-Light-Gray);
+}
+
+*:hover {
+	transition: 0.3s;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.header > button {
+	width: 24px;
+	height: 24px;
+	background: 0;
+	border: 0;
+	background-image: url(./images/icon-moon.svg);
+	background-size: auto 100%;
+	cursor: pointer;
+}

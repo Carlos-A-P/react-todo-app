@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import "./TodoForm.css";
 
 function TodoForm(props) {
 	const [input, setInput] = useState("");
@@ -30,16 +31,22 @@ function TodoForm(props) {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<input
-				placeholder="add todo"
-				value={input}
-				onChange={handleChange}
-				name="text"
-				ref={inputRef}
-			/>
-			<button onClick={handleSubmit}>Add todo</button>
-		</form>
+		<div className="new-task-creator">
+			<form onSubmit={handleSubmit}>
+				<div className="button-wrap">
+					<div className="btn create"></div>
+				</div>
+				<input
+					placeholder="add todo"
+					className="new-task"
+					value={input}
+					onChange={handleChange}
+					name="text"
+					ref={inputRef}
+				/>
+				{/* <button classonClick={handleSubmit}>Add todo</button> */}
+			</form>
+		</div>
 	);
 }
 

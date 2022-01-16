@@ -1,0 +1,59 @@
+.new-task {
+	width: 100%;
+	height: 50px;
+	background: white;
+	border: 0;
+	border-radius: 5px;
+	color: inherit;
+	font-size: inherit;
+	outline: none;
+	/* transition: border-bottom 250ms ease-in; */
+	padding: 0.25em 0.25em 0.25em 3em;
+	z-index: 0;
+}
+
+.new-task::placeholder {
+	color: inherit;
+	font-size: 13px;
+	opacity: 0.4;
+}
+
+.new-task-creator {
+	margin-bottom: 1rem;
+}
+
+.new-task-creator > form {
+	display: flex;
+	position: relative;
+}
+
+/* button layout for default and hover */
+.button-wrap {
+	position: absolute;
+	top: 30%;
+	left: 20px;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--Light-Grayish-Blue);
+	/* padding: 1rem; */
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+}
+
+.button-wrap:hover {
+	background: var(--Check-Background);
+}
+
+.new-task-creator .btn {
+	/* position: absolute; */
+	/* z-index: 2; */
+	/* background: 0; */
+	border: 0;
+	border-radius: 50%;
+	width: 18px;
+	height: 18px;
+	background: white;
+}
