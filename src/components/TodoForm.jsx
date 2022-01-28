@@ -5,11 +5,11 @@ function TodoForm(props) {
 	const [input, setInput] = useState("");
 
 	// set focus to input after clicking submit button
-	const inputRef = useRef(null);
+	// const inputRef = useRef(null);
 
-	useEffect(() => {
-		inputRef.current.focus();
-	});
+	// useEffect(() => {
+	// 	inputRef.current.focus();
+	// });
 
 	// update input as user types
 	const handleChange = (e) => {
@@ -33,18 +33,17 @@ function TodoForm(props) {
 	return (
 		<div className="new-task-creator">
 			<form onSubmit={handleSubmit}>
-				<div className="button-wrap">
-					<div className="btn create"></div>
+				<div className="submit-btn-wrap">
+					<button type="submit"></button>
 				</div>
 				<input
-					placeholder="add todo"
+					placeholder="Create a new todo..."
 					className="new-task"
 					value={input}
 					onChange={handleChange}
 					name="text"
-					ref={inputRef}
+					// ref={inputRef}
 				/>
-				{/* <button classonClick={handleSubmit}>Add todo</button> */}
 			</form>
 		</div>
 	);

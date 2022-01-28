@@ -1,0 +1,20 @@
+.todo-footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	font-size: 15px;
+}
+
+.task-count {
+	color: #777a92;
+	opacity: 0.7;
+}
+
+.todo-footer button {
+	border: 0;
+	background: 0;
+	cursor: pointer;
+	font-size: 15px;
+	color: #777a92;
+	opacity: 0.7;
+}

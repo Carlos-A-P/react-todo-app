@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
+import Filters from "./Filters";
+import TodosBar from "./TodosBar";
+import "../styles/TodoList.css";
 
 function TodoList() {
 	// list of Todos
@@ -41,7 +44,15 @@ function TodoList() {
 		<div>
 			{/* pass function as a prop */}
 			<TodoForm onSubmit={addTodo} />
-			<Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
+			<div className="todos-wrap">
+				<Todo
+					todos={todos}
+					completeTodo={completeTodo}
+					removeTodo={removeTodo}
+				/>
+				<TodosBar />
+			</div>
+			<Filters />
 		</div>
 	);
 }

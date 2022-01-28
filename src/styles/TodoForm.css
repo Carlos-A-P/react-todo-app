@@ -27,8 +27,7 @@
 	position: relative;
 }
 
-/* button layout for default and hover */
-.button-wrap {
+.submit-btn-wrap {
 	position: absolute;
 	top: 30%;
 	left: 20px;
@@ -36,21 +35,17 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--Light-Grayish-Blue);
-	/* padding: 1rem; */
+	background: #cacde8;
 	border-radius: 50%;
 	width: 20px;
 	height: 20px;
 }
 
-.button-wrap:hover {
-	background: var(--Check-Background);
+.submit-btn-wrap:hover {
+	background: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
-.new-task-creator .btn {
-	/* position: absolute; */
-	/* z-index: 2; */
-	/* background: 0; */
+.submit-btn-wrap button {
 	border: 0;
 	border-radius: 50%;
 	width: 18px;
