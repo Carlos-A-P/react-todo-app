@@ -1,0 +1,18 @@
+footer {
+	text-align: center;
+	color: #777a92;
+}
+
+footer > p {
+	margin-bottom: 2rem;
+	font-size: 14px;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}

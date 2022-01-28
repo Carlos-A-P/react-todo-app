@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./TodoForm.css";
+import "../styles/TodoForm.css";
 
 function TodoForm(props) {
 	const [input, setInput] = useState("");

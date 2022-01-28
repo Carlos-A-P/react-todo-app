@@ -1,0 +1,23 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.header > button {
+	width: 24px;
+	height: 24px;
+	background: 0;
+	border: 0;
+	background-image: url(../assets/icon-moon.svg);
+	background-size: auto 100%;
+	cursor: pointer;
+}
+
+h1 {
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.8rem;
+	font-weight: 700;
+	letter-spacing: 8px;
+}
