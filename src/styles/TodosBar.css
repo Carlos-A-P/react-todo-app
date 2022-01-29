@@ -18,3 +18,7 @@
 	color: #777a92;
 	opacity: 0.7;
 }
+
+.todo-footer button:hover {
+	color: #393a4c;
+}

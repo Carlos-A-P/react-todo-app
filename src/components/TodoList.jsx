@@ -8,6 +8,9 @@ import "../styles/TodoList.css";
 function TodoList() {
 	// list of Todos
 	const [todos, setTodos] = useState([]);
+	const [filter, setFilter] = useState("All");
+	const [activeTodos, setActiveTodos] = useState([]);
+	const [completed, setCompleted] = useState([]);
 
 	const addTodo = (todo) => {
 		// if there's alot of empty space this code will join the empty space
@@ -40,9 +43,12 @@ function TodoList() {
 		setTodos(updatedTodos);
 	};
 
+	const clearTodos = () => {
+		setTodos([]);
+	};
+
 	return (
 		<div>
-			{/* pass function as a prop */}
 			<TodoForm onSubmit={addTodo} />
 			<div className="todos-wrap">
 				<Todo
@@ -50,7 +56,7 @@ function TodoList() {
 					completeTodo={completeTodo}
 					removeTodo={removeTodo}
 				/>
-				<TodosBar />
+				<TodosBar numItems={todos.length} clearAll={clearTodos} />
 			</div>
 			<Filters />
 		</div>

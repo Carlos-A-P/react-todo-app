@@ -59,6 +59,19 @@
 	order: -1;
 }
 
+.todo.complete .checkbox-wrap {
+	background: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.todo.complete .checkbox-wrap .custom-checkbox {
+	background-color: transparent;
+	background-image: url(../assets/icon-check.svg);
+	background-repeat: no-repeat;
+	top: 21px;
+	left: 23px;
+	background-size: 10px 10px;
+}
+
 .custom-checkbox {
 	position: absolute;
 	left: 18.9px;
@@ -82,14 +95,26 @@ label {
 }
 
 button.delete-task {
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	background-image: url(../assets/icon-cross.svg);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 15px 15px;
+	background-position: center;
 	margin-left: auto;
 	cursor: pointer;
+	z-index: 1;
 	border: 0;
 	background-color: white;
 	visibility: hidden;
+}
+
+.todo:hover .checkbox-wrap,
+[type="checkbox"]:focus ~ .checkbox-wrap {
+	background: linear-gradient(145deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.todo:hover button.delete-task,
+.todo:focus button.delete-task {
+	visibility: visible;
 }
