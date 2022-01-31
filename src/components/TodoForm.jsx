@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/TodoForm.css";
 
 function TodoForm(props) {
@@ -24,6 +24,7 @@ function TodoForm(props) {
 		props.onSubmit({
 			id: Math.floor(Math.random() * 10000),
 			text: input,
+			isComplete: false,
 		});
 
 		// clear input field after submit

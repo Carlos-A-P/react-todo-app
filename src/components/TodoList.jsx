@@ -19,12 +19,10 @@ function TodoList() {
 		}
 
 		// add new todo to the end of existing todos array
-		const newTodos = [todo, ...todos];
+		const newTodos = [...todos, todo];
 
 		// update State, adding object to array
 		setTodos(newTodos);
-
-		console.log(todos);
 	};
 
 	const removeTodo = (id) => {
@@ -43,8 +41,16 @@ function TodoList() {
 		setTodos(updatedTodos);
 	};
 
-	const clearTodos = () => {
-		setTodos([]);
+	const removeCompleted = () => {
+		let updatedTodos = todos.filter((todo) => {
+			return todo.isComplete === false;
+		});
+		setTodos(updatedTodos);
+	};
+
+	const displayTodos = (setting) => {
+		setFilter(setting);
+		console.log(filter, setting);
 	};
 
 	return (
@@ -55,10 +61,11 @@ function TodoList() {
 					todos={todos}
 					completeTodo={completeTodo}
 					removeTodo={removeTodo}
+					display={filter}
 				/>
-				<TodosBar numItems={todos.length} clearAll={clearTodos} />
+				<TodosBar numItems={todos.length} clearCompleted={removeCompleted} />
 			</div>
-			<Filters />
+			<Filters display={filter} todosFilter={displayTodos} />
 		</div>
 	);
 }
