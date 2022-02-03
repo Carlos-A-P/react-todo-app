@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 import Filters from "./Filters";
@@ -7,18 +7,23 @@ import "../styles/TodoList.css";
 
 function TodoList() {
 	// list of Todos
-	const [todos, setTodos] = useState([
-		{
-			id: String(Math.floor(Math.random() * 10000)),
-			text: "Complete this challenge",
-			isComplete: false,
-		},
-		{
-			id: String(Math.floor(Math.random() * 10000)),
-			text: "Take over the world",
-			isComplete: false,
-		},
-	]);
+	const [todos, setTodos] = useState(() => {
+		const localData = localStorage.getItem("todos");
+		return localData
+			? JSON.parse(localData)
+			: [
+					{
+						id: String(Math.floor(Math.random() * 10000)),
+						text: "Complete this challenge",
+						isComplete: false,
+					},
+					{
+						id: String(Math.floor(Math.random() * 10000)),
+						text: "Take over the world",
+						isComplete: false,
+					},
+			  ];
+	});
 	const [filter, setFilter] = useState("All");
 
 	const addTodo = (todo) => {
@@ -66,6 +71,10 @@ function TodoList() {
 	const reorderList = (list) => {
 		setTodos(list);
 	};
+
+	useEffect(() => {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	}, [todos]);
 
 	return (
 		<div>
