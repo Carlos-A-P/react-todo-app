@@ -7,10 +7,19 @@ import "../styles/TodoList.css";
 
 function TodoList() {
 	// list of Todos
-	const [todos, setTodos] = useState([]);
+	const [todos, setTodos] = useState([
+		{
+			id: String(Math.floor(Math.random() * 10000)),
+			text: "Complete this challenge",
+			isComplete: false,
+		},
+		{
+			id: String(Math.floor(Math.random() * 10000)),
+			text: "Take over the world",
+			isComplete: false,
+		},
+	]);
 	const [filter, setFilter] = useState("All");
-	const [activeTodos, setActiveTodos] = useState([]);
-	const [completed, setCompleted] = useState([]);
 
 	const addTodo = (todo) => {
 		// if there's alot of empty space this code will join the empty space
@@ -20,6 +29,7 @@ function TodoList() {
 
 		// add new todo to the end of existing todos array
 		const newTodos = [...todos, todo];
+		console.log(todos);
 
 		// update State, adding object to array
 		setTodos(newTodos);
@@ -53,6 +63,10 @@ function TodoList() {
 		console.log(filter, setting);
 	};
 
+	const reorderList = (list) => {
+		setTodos(list);
+	};
+
 	return (
 		<div>
 			<TodoForm onSubmit={addTodo} />
@@ -62,6 +76,7 @@ function TodoList() {
 					completeTodo={completeTodo}
 					removeTodo={removeTodo}
 					display={filter}
+					handleChange={reorderList}
 				/>
 				<TodosBar numItems={todos.length} clearCompleted={removeCompleted} />
 			</div>

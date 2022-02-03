@@ -22,7 +22,7 @@ function TodoForm(props) {
 
 		// add random id and set input field and send back to prop
 		props.onSubmit({
-			id: Math.floor(Math.random() * 10000),
+			id: String(Math.floor(Math.random() * 10000)),
 			text: input,
 			isComplete: false,
 		});
