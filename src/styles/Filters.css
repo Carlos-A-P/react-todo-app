@@ -25,3 +25,20 @@
 .filters button.selected {
 	color: #3a7bfd;
 }
+
+@media (min-width: 650px) {
+	.filters {
+		width: 200px;
+		margin: auto;
+		margin-top: -3rem;
+		padding: 0;
+		margin-bottom: 4rem;
+		left: -12px;
+		position: relative;
+	}
+
+	.filters button {
+		font-size: 15px;
+		opacity: 0.6;
+	}
+}

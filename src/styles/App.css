@@ -9,7 +9,7 @@
 	padding: 0;
 }
 
-body {
+.page-wrap {
 	font-family: "Josefin Sans", sans-serif;
 	padding: 3rem 1.7rem 0;
 	font-weight: 400;
@@ -22,6 +22,15 @@ body {
 	background-color: var(--Very-Light-Gray);
 }
 
-*:hover {
-	transition: 0.3s;
+.todo-wrapper {
+	max-width: 500px;
+	margin: auto;
+}
+
+@media (min-width: 650px) {
+	.page-wrap {
+		background-image: url(../assets/bg-desktop-light.jpg);
+		background-size: 100vw 14rem, cover;
+		padding: 4rem 1.7rem 0;
+	}
 }

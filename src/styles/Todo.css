@@ -118,3 +118,9 @@ button.delete-task {
 .todo:focus button.delete-task {
 	visibility: visible;
 }
+
+@media (min-width: 650px) {
+	label {
+		font-size: 18px;
+	}
+}
